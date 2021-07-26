@@ -1,4 +1,4 @@
-# TiNET入門 実践
+# 0x01-(3) TiNET入門 実践
 
 ### Virtual_Network_Playground_2をTiNETで試す
 1. 構成ファイルのYAML作成

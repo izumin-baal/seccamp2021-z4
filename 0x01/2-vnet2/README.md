@@ -1,4 +1,4 @@
-# 課題: VMログイン後の確認課題
+# 課題: 0x01-(2) VMログイン後の確認課題
 ## Virtual Network Playground 2
 
 ### 構成

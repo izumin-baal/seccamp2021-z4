@@ -1,8 +1,8 @@
-# BGP入門大会 topo2
+# 0x02 BGP入門大会 topo2
 
 ![topo2](topo2.png)
 
-1. FRR Setup
+1. (1) FRR Setup
     - spec.yamlは指定のものを利用→[指定のページ](https://github.com/seccamp-z/2021Z4/tree/main/0x02)
     - 構成のとおりに起動
     > tinet up -c spec.yaml | sudo sh -x  
@@ -15,7 +15,7 @@
     Copyright 1996-2005 Kunihiro Ishiguro, et al.
     ```
     - コマンドはCiscoライクなので?やTabを駆使する。
-2. BGP Peer Setup
+2. (2) BGP Peer Setup
     - 今回のtopo2構成ではR[1,2]にRouting設定はされていない。
     - R[1,2]のConnectedに存在しない相手方のCXに到達するには経路を受け取る必要がある。
     - networkコマンドを利用して経路を広告させる。
@@ -35,7 +35,7 @@
 
     Total number of neighbors 1
     ```
-3. BGP Route Advertise
+3. (3) BGP Route Advertise
     - 経路を広告するには2種類。
         - networkコマンドで明示的に指定
         - redistributeコマンドで再配布
@@ -113,7 +113,7 @@
     *                   10.255.1.1               0             0 1 ?
     ```
 
-4. Capture BGP Packet
+4. (4) Capture BGP Packets
     - R1上でtcpdumpを行う。
     - R2のnetworkコマンドをnoで未設定状態にする。
     - R2側のnet0をshutしておきtcpdumpを開始。
@@ -142,7 +142,7 @@
     C>* 10.255.1.0/24 is directly connected, net0, 00:27:31
     ```
 
-5. Analyze BGP Packets
+5. (5) Analyze BGP Packets
     - OPENメッセージ
         - OPENメッセージが交換される前にTCPによる3Wayhandshakeが行われている。
         - OPENメッセージで交換される
